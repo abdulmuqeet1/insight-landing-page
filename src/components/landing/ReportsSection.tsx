@@ -46,7 +46,7 @@ export function ReportsSection() {
           {/* rotating ring of report icons */}
           <div
             className={cn(
-              "absolute inset-0 animate-[orbit-spin_46s_linear_infinite]",
+              "group/orbit absolute inset-0 animate-[orbit-spin_46s_linear_infinite] hover:[animation-play-state:paused]",
               selected !== null && "[animation-play-state:paused]",
             )}
           >
@@ -68,7 +68,7 @@ export function ReportsSection() {
                     aria-label={r.label}
                     className={cn(
                       "group grid h-14 w-14 place-items-center rounded-2xl border border-border bg-card text-accent shadow-sm transition-all duration-500",
-                      "animate-[orbit-spin-rev_46s_linear_infinite] hover:scale-110 hover:text-primary",
+                      "animate-[orbit-spin-rev_46s_linear_infinite] group-hover/orbit:[animation-play-state:paused] hover:scale-110 hover:text-primary",
                       selected !== null && "[animation-play-state:paused]",
                       dimmed ? "scale-75 opacity-30 blur-[1px]" : "opacity-100",
                       selected === i && "scale-110 text-primary ring-2 ring-primary/40",
