@@ -6,12 +6,6 @@ import dashboard from "@/assets/autobooks-dashboard.png";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-0">
-      {/* soft ambient backdrop */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute left-1/4 top-40 h-[320px] w-[320px] rounded-full bg-accent/10 blur-3xl" />
-      </div>
-
       <div className="mx-auto max-w-3xl px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -75,7 +69,6 @@ export function Hero() {
         transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
         className="relative mx-auto mt-16 max-w-6xl px-6"
       >
-        <div className="pointer-events-none absolute -inset-x-10 -top-10 bottom-0 -z-10 rounded-[2rem] bg-gradient-to-b from-primary/15 to-transparent blur-2xl" />
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-shell/20 ring-1 ring-black/5">
           <img
             src={dashboard}

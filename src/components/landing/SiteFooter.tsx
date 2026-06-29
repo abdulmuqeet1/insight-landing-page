@@ -1,4 +1,5 @@
 import { BookOpen } from "lucide-react";
+import { FooterWordmark } from "./FooterWordmark";
 
 const cols = [
   { title: "Product", links: ["Invoicing", "Payments", "Expenses", "Reports", "Templates"] },
@@ -51,6 +52,8 @@ export function SiteFooter() {
             <a href="#" className="hover:text-white">GDPR</a>
           </div>
         </div>
+
+        <FooterWordmark />
       </div>
     </footer>
   );

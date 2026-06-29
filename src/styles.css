@@ -134,3 +134,30 @@
     display: none;
   }
 }
+
+/* Concave fillets that blend a raised pill (notch) into a flat panel edge */
+@utility notch-fillet-l {
+  -webkit-mask: radial-gradient(circle at top left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  mask: radial-gradient(circle at top left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+}
+@utility notch-fillet-r {
+  -webkit-mask: radial-gradient(circle at top right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  mask: radial-gradient(circle at top right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+}
+
+/* Moving gradient stroke for the giant footer wordmark */
+@keyframes wordmark-pan {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes orbit-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes orbit-spin-rev {
+  to { transform: rotate(-360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

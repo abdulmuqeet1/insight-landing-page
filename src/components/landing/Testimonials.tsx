@@ -11,14 +11,19 @@ const testimonials = [
 
 function Column({ items, duration }: { items: typeof testimonials; duration: number }) {
   return (
-    <div className="flex flex-col gap-5">
+    <div className="overflow-hidden">
       <motion.div
         animate={{ y: ["0%", "-50%"] }}
         transition={{ duration, repeat: Infinity, ease: "linear" }}
-        className="flex flex-col gap-5"
+        className="flex flex-col"
       >
+        {/* duplicated set; each card carries its own bottom spacing so the
+            seam between the two copies is perfectly uniform = seamless loop */}
         {[...items, ...items].map((t, i) => (
-          <div key={i} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+          <div
+            key={i}
+            className="mb-5 rounded-2xl border border-border bg-card p-6 shadow-sm"
+          >
             <p className="text-sm text-foreground/85">"{t.text}"</p>
             <div className="mt-4">
               <p className="text-sm font-semibold">{t.name}</p>
