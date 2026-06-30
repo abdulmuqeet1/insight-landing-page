@@ -54,8 +54,8 @@ export function CreateWithAI() {
   const textOpacity = useTransform(scrollYProgress, [0, 0.28], [1, 0]);
   const topY = useTransform(scrollYProgress, [0, 0.5], [0, -80]);
   const botY = useTransform(scrollYProgress, [0, 0.5], [0, 80]);
-  const labelOpacity = useTransform(scrollYProgress, [0, 0.32], [1, 0]);
-  const contentOpacity = useTransform(scrollYProgress, [0.46, 0.62], [0, 1]);
+  const labelOpacity = useTransform(scrollYProgress, [0, 0.22], [1, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.66], [0, 1]);
   const bgOpacity = useTransform(scrollYProgress, [0.12, 0.5], [0, 1]);
 
   return (
