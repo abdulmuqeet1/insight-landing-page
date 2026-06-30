@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/Hero";
 import { ProductShowcase } from "@/components/landing/ProductShowcase";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Features } from "@/components/landing/Features";
+import { CreateWithAI } from "@/components/landing/CreateWithAI";
 import { AdminSavings } from "@/components/landing/AdminSavings";
 import { Modules } from "@/components/landing/Modules";
 import { AISection } from "@/components/landing/AISection";
@@ -44,6 +45,7 @@ function Index() {
       <ProductShowcase />
       <HowItWorks />
       <Features />
+      <CreateWithAI />
       <AdminSavings />
       <Modules />
       <AISection />
