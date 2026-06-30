@@ -145,6 +145,37 @@
   mask: radial-gradient(circle at top right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
 }
 
+/* Concave fillets for a notch that dips DOWN from a flat top edge */
+@utility notch-fillet-bl {
+  -webkit-mask: radial-gradient(circle at bottom left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  mask: radial-gradient(circle at bottom left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+}
+@utility notch-fillet-br {
+  -webkit-mask: radial-gradient(circle at bottom right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  mask: radial-gradient(circle at bottom right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+}
+
+/* Soft, semi-transparent "soul" card: no border, page tint shows through */
+@utility soul-card {
+  background-color: color-mix(in oklab, var(--card) 58%, transparent);
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 50px -28px color-mix(in oklab, var(--shell) 55%, transparent);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease, background-color 0.35s ease;
+}
+@utility soul-card-dark {
+  background-color: color-mix(in oklab, #ffffff 8%, transparent);
+  border-radius: 1.5rem;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+/* horizontal marquee for the AI showcase cards */
+@keyframes card-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Moving gradient stroke for the giant footer wordmark */
 @keyframes wordmark-pan {
   0% { background-position: 0% 50%; }
