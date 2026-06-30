@@ -67,7 +67,7 @@ export function ReportsSection() {
                     onClick={() => setSelected(i)}
                     aria-label={r.label}
                     className={cn(
-                      "group grid h-14 w-14 place-items-center rounded-2xl border border-border bg-card text-accent shadow-sm transition-all duration-500",
+                      "group grid h-14 w-14 place-items-center soul-card !rounded-2xl text-accent transition-all duration-500",
                       "animate-[orbit-spin-rev_46s_linear_infinite] group-hover/orbit:[animation-play-state:paused] hover:scale-110 hover:text-primary",
                       selected !== null && "[animation-play-state:paused]",
                       dimmed ? "scale-75 opacity-30 blur-[1px]" : "opacity-100",
@@ -90,7 +90,7 @@ export function ReportsSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.85 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute left-1/2 top-1/2 z-10 grid aspect-square w-[58%] -translate-x-1/2 -translate-y-1/2 place-content-center rounded-3xl border border-border bg-card p-5 text-center shadow-2xl shadow-shell/20"
+                className="absolute left-1/2 top-1/2 z-10 grid aspect-square w-[58%] -translate-x-1/2 -translate-y-1/2 place-content-center soul-card p-5 text-center shadow-2xl shadow-shell/20"
               >
                 <button
                   onClick={() => setSelected(null)}

@@ -49,8 +49,8 @@ export function Pricing() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className={cn(
-              "relative flex flex-col rounded-2xl border bg-card p-7 shadow-sm",
-              p.popular ? "border-primary shadow-lg ring-1 ring-primary/30" : "border-border",
+              "relative flex flex-col soul-card p-7 transition-transform hover:-translate-y-1",
+              p.popular && "ring-1 ring-primary/40 shadow-[0_30px_70px_-30px_color-mix(in_oklab,var(--primary)_55%,transparent)]",
             )}
           >
             {p.popular && (
