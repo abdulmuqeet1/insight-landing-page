@@ -36,7 +36,7 @@ export function AISection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.06 }}
-              className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-sm shadow-sm"
+              className="flex items-start gap-3 soul-card p-4 text-sm"
             >
               <span className="grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-ai/10 text-ai">
                 <Sparkles className="h-4 w-4" />
