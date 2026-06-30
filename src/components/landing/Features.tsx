@@ -9,7 +9,6 @@ import {
   FileSignature,
   Sparkles,
   DatabaseZap,
-  ShieldCheck,
   Check,
 } from "lucide-react";
 
@@ -69,12 +68,6 @@ const features = [
     body: "Move business data into AutoBooks without starting from scratch.",
     bullets: ["Import business records", "Export data", "Migration workflow", "Review before commit", "Accountant-friendly handoff"],
   },
-  {
-    icon: ShieldCheck,
-    title: "Users & Roles",
-    body: "Give the right people access to the right parts of the business.",
-    bullets: ["Admin roles", "Staff access", "Permission control", "Shared company data", "Team-ready workflows"],
-  },
 ];
 
 export function Features() {
@@ -102,7 +95,7 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
-              className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md"
+              className="group soul-card p-6 hover:-translate-y-1 hover:shadow-[0_28px_60px_-30px_color-mix(in_oklab,var(--shell)_60%,transparent)]"
             >
               <span
                 className={`grid h-11 w-11 place-items-center rounded-xl ${

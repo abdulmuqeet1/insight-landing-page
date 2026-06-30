@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/Hero";
 import { ProductShowcase } from "@/components/landing/ProductShowcase";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Features } from "@/components/landing/Features";
+import { CreateWithAI } from "@/components/landing/CreateWithAI";
 import { AdminSavings } from "@/components/landing/AdminSavings";
 import { Modules } from "@/components/landing/Modules";
 import { AISection } from "@/components/landing/AISection";
@@ -37,13 +38,14 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="overflow-x-hidden">
+    <main className="[overflow-x:clip]">
       <SmoothScroll />
       <Navbar />
       <Hero />
       <ProductShowcase />
       <HowItWorks />
       <Features />
+      <CreateWithAI />
       <AdminSavings />
       <Modules />
       <AISection />

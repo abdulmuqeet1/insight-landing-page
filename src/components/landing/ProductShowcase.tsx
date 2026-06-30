@@ -26,14 +26,52 @@ export function ProductShowcase() {
 
   return (
     <section id="product" className="relative px-4 py-24 sm:px-6">
-      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] p-2 sm:p-4">
+      <div className="relative mx-auto max-w-6xl rounded-[2rem]">
+        {/* notch dipping down from the container's top edge, tabs nested inside */}
+        <div className="pointer-events-none absolute left-1/2 top-0 z-20 hidden -translate-x-1/2 items-start sm:flex">
+          {/* left fillet */}
+          <div
+            className="notch-fillet-bl h-[26px] w-[26px] bg-background"
+            style={{ "--r": "26px" } as CSSProperties}
+          />
+          {/* tab pill carved out of the container (page-bg colored) */}
+          <div className="pointer-events-auto -mt-px flex items-center gap-1 rounded-b-[26px] bg-background px-3 pb-3 pt-1.5">
+            {tabs.map((t) => {
+              const Icon = t.icon;
+              const isActive = active === t.id;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => setActive(t.id)}
+                  className={cn(
+                    "inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
+                    isActive
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  <Icon className="h-4 w-4" />
+                  {t.label}
+                </button>
+              );
+            })}
+          </div>
+          {/* right fillet */}
+          <div
+            className="notch-fillet-br h-[26px] w-[26px] bg-background"
+            style={{ "--r": "26px" } as CSSProperties}
+          />
+        </div>
+
+        {/* the shader container */}
+        <div className="relative overflow-hidden rounded-[2rem] p-2 pt-14 sm:p-4 sm:pt-16">
         {/* animated water shader background */}
         <div className="absolute inset-0 -z-10">
           <WarpShader />
           <div className="absolute inset-0 bg-shell/30" />
         </div>
 
-        <div className="px-4 pt-10 text-center sm:px-10">
+        <div className="px-4 pt-6 text-center sm:px-10">
           <h2 className="text-balance text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             One workspace for every part of your business
           </h2>
@@ -64,45 +102,9 @@ export function ProductShowcase() {
           })}
         </div>
 
-        {/* app screen with notched tab bar */}
-        <div className="relative mt-14 px-3 pb-6 sm:mt-20 sm:px-10 sm:pb-10">
+        {/* app screen */}
+        <div className="relative mt-10 px-3 pb-6 sm:mt-12 sm:px-10 sm:pb-10">
           <div className="relative rounded-[28px] bg-card shadow-2xl shadow-shell/30">
-            {/* the notch: raised pill carrying the tabs, blended with concave fillets */}
-            <div className="pointer-events-none absolute left-1/2 top-0 hidden -translate-x-1/2 -translate-y-full items-end sm:flex">
-              {/* left fillet */}
-              <div
-                className="notch-fillet-l h-[22px] w-[22px] self-end bg-card"
-                style={{ "--r": "22px" } as CSSProperties}
-              />
-              {/* pill */}
-              <div className="pointer-events-auto flex items-center gap-1 rounded-t-[22px] bg-card px-2 pb-1 pt-2.5">
-                {tabs.map((t) => {
-                  const Icon = t.icon;
-                  const isActive = active === t.id;
-                  return (
-                    <button
-                      key={t.id}
-                      onClick={() => setActive(t.id)}
-                      className={cn(
-                        "inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-sm font-medium transition-colors",
-                        isActive
-                          ? "bg-foreground/5 text-foreground"
-                          : "text-muted-foreground hover:text-foreground",
-                      )}
-                    >
-                      <Icon className="h-4 w-4" />
-                      {t.label}
-                    </button>
-                  );
-                })}
-              </div>
-              {/* right fillet */}
-              <div
-                className="notch-fillet-r h-[22px] w-[22px] self-end bg-card"
-                style={{ "--r": "22px" } as CSSProperties}
-              />
-            </div>
-
             {/* preview */}
             <div className="overflow-hidden rounded-[28px]">
               <AnimatePresence mode="wait">
@@ -120,6 +122,7 @@ export function ProductShowcase() {
               </AnimatePresence>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>

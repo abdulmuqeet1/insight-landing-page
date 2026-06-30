@@ -22,7 +22,7 @@ function Column({ items, duration }: { items: typeof testimonials; duration: num
         {[...items, ...items].map((t, i) => (
           <div
             key={i}
-            className="mb-5 rounded-2xl border border-border bg-card p-6 shadow-sm"
+            className="mb-5 soul-card p-6"
           >
             <p className="text-sm text-foreground/85">"{t.text}"</p>
             <div className="mt-4">

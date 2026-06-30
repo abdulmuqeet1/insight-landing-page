@@ -41,7 +41,7 @@ export function Modules() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.35, delay: (i % 4) * 0.05 }}
-              className="flex items-center gap-3 rounded-xl border border-border bg-card p-4 shadow-sm"
+              className="group flex items-center gap-3 soul-card p-4 transition-transform hover:-translate-y-1"
             >
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
                 <Icon className="h-5 w-5" />
