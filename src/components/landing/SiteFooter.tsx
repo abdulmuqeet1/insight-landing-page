@@ -1,9 +1,19 @@
 import { BookOpen } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { FooterWordmark } from "./FooterWordmark";
 
 const cols = [
   { title: "Product", links: ["Invoicing", "Payments", "Expenses", "Reports", "Templates"] },
-  { title: "Company", links: ["About", "Blog", "Careers", "Contact", "Security"] },
+  {
+    title: "Company",
+    links: [
+      { label: "Our Story", to: "/our-story" },
+      { label: "Blog", to: "/blog" },
+      "Careers",
+      "Contact",
+      "Security",
+    ],
+  },
   { title: "Resources", links: ["Docs", "Guides", "Data migration", "Accountant handoff", "Support"] },
 ];
 
@@ -32,13 +42,29 @@ export function SiteFooter() {
             <div key={c.title}>
               <h4 className="text-sm font-semibold text-white">{c.title}</h4>
               <ul className="mt-4 space-y-2.5">
-                {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm text-shell-foreground/70 transition-colors hover:text-white">
-                      {l}
-                    </a>
-                  </li>
-                ))}
+                {c.links.map((l) => {
+                  const isLink = typeof l === "object";
+                  const label = isLink ? l.label : l;
+                  return (
+                    <li key={label}>
+                      {isLink ? (
+                        <Link
+                          to={l.to}
+                          className="text-sm text-shell-foreground/70 transition-colors hover:text-white"
+                        >
+                          {label}
+                        </Link>
+                      ) : (
+                        <a
+                          href="#"
+                          className="text-sm text-shell-foreground/70 transition-colors hover:text-white"
+                        >
+                          {label}
+                        </a>
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
