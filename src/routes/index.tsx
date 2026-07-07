@@ -12,6 +12,7 @@ import { AISection } from "@/components/landing/AISection";
 import { ReportsSection } from "@/components/landing/ReportsSection";
 import { Pricing } from "@/components/landing/Pricing";
 import { Testimonials } from "@/components/landing/Testimonials";
+import { FAQ, faqs } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 
@@ -31,6 +32,40 @@ export const Route = createFileRoute("/")({
           "Invoices, payments, expenses, customers, vendors, reports, and AI-assisted workflows in one connected accounting workspace.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "AutoBooks",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          description:
+            "AutoBooks is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+            description: "14-day free trial",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
+      },
     ],
   }),
   component: Index,
@@ -52,6 +87,7 @@ function Index() {
       <ReportsSection />
       <Pricing />
       <Testimonials />
+      <FAQ />
       <FinalCTA />
       <SiteFooter />
     </main>
