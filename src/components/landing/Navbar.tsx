@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
 import { BookOpen, Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "Features", href: "#features" },
-  { label: "Product", href: "#product" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Features", href: "/#features" },
+  { label: "Product", href: "/#product" },
+  { label: "Pricing", href: "/#pricing" },
+  { label: "FAQ", href: "/#faq" },
+];
+
+const pageLinks = [
+  { label: "Our Story", to: "/our-story" },
+  { label: "Blog", to: "/blog" },
 ];
 
 export function Navbar() {
@@ -30,12 +36,12 @@ export function Navbar() {
           scrolled && "backdrop-blur-md",
         )}
       >
-        <a href="#top" className="flex shrink-0 items-center gap-2 pl-2">
+        <Link to="/" className="flex shrink-0 items-center gap-2 pl-2">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
             <BookOpen className="h-4 w-4" />
           </span>
           <span className="text-sm font-bold tracking-tight">AutoBooks</span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
@@ -46,6 +52,15 @@ export function Navbar() {
             >
               {l.label}
             </a>
+          ))}
+          {pageLinks.map((l) => (
+            <Link
+              key={l.label}
+              to={l.to}
+              className="rounded-full px-3 py-1.5 text-sm text-shell-foreground/80 transition-colors hover:bg-white/10 hover:text-shell-foreground"
+            >
+              {l.label}
+            </Link>
           ))}
         </div>
 
@@ -81,6 +96,16 @@ export function Navbar() {
             >
               {l.label}
             </a>
+          ))}
+          {pageLinks.map((l) => (
+            <Link
+              key={l.label}
+              to={l.to}
+              onClick={() => setOpen(false)}
+              className="block rounded-lg px-3 py-2 text-sm hover:bg-white/10"
+            >
+              {l.label}
+            </Link>
           ))}
           <Button className="mt-2 w-full rounded-full" asChild>
             <a href="#pricing">Start free trial</a>
