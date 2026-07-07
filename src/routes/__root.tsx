@@ -77,14 +77,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "AutoBooks — Accounting workspace for small teams" },
+      {
+        name: "description",
+        content:
+          "AutoBooks is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
+      },
+      { name: "author", content: "AutoBooks" },
+      { property: "og:title", content: "AutoBooks — Accounting workspace for small teams" },
+      {
+        property: "og:description",
+        content:
+          "Invoices, payments, expenses, customers, vendors, reports and AI-assisted workflows in one connected accounting workspace.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "AutoBooks" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "AutoBooks — Accounting workspace for small teams" },
+      {
+        name: "twitter:description",
+        content:
+          "One connected accounting workspace for modern small teams.",
+      },
     ],
     links: [
       {
@@ -96,6 +110,29 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "AutoBooks",
+          description:
+            "A clean accounting workspace for modern small teams.",
+          logo: "/favicon.ico",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "AutoBooks",
+          description:
+            "A clean accounting workspace for modern small teams.",
+        }),
       },
     ],
   }),
