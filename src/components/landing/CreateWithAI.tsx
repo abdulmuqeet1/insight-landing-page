@@ -136,6 +136,7 @@ export function CreateWithAI() {
                           width={512}
                           height={640}
                           loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-shell/80 via-shell/10 to-transparent" />
