@@ -65,14 +65,14 @@ export function Navbar() {
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
-          <a
-            href="#"
+          <Link
+            to="/auth"
             className="rounded-full px-3 py-1.5 text-sm text-shell-foreground/80 transition-colors hover:text-shell-foreground"
           >
             Login
-          </a>
+          </Link>
           <Button size="sm" className="rounded-full" asChild>
-            <a href="#pricing">Start free trial</a>
+            <Link to="/signup">Start free trial</Link>
           </Button>
         </div>
 
@@ -107,8 +107,17 @@ export function Navbar() {
               {l.label}
             </Link>
           ))}
+          <Link
+            to="/auth"
+            onClick={() => setOpen(false)}
+            className="block rounded-lg px-3 py-2 text-sm hover:bg-white/10"
+          >
+            Login
+          </Link>
           <Button className="mt-2 w-full rounded-full" asChild>
-            <a href="#pricing">Start free trial</a>
+            <Link to="/signup" onClick={() => setOpen(false)}>
+              Start free trial
+            </Link>
           </Button>
         </div>
       )}
