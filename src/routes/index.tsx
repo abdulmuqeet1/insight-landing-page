@@ -35,11 +35,12 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
-    // Preload the hero screenshot (the LCP element) so it starts fetching
-    // before the component tree hydrates.
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    ...(undefined as never),
+    links: [
+      { rel: "canonical", href: "/" },
+      // Preload the hero screenshot (the LCP element) so it starts fetching
+      // before the component tree hydrates.
+      { rel: "preload", as: "image", href: dashboardWebp, fetchPriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
