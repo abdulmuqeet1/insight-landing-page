@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,6 +10,7 @@ const plans = [
     price: "$15",
     desc: "Best for getting started",
     popular: false,
+    planId: "starter",
     features: [
       "Invoicing and payments", "Customers and vendors", "Expenses and bills",
       "Financial dashboard", "Basic reports", "PDF templates",
@@ -20,6 +22,7 @@ const plans = [
     price: "$39",
     desc: "Best value for growing businesses",
     popular: true,
+    planId: "pro",
     features: [
       "Everything in Starter", "More invoices and documents", "Advanced PDF templates",
       "User roles and permissions", "Advanced reports", "Data migration tools",
@@ -67,8 +70,11 @@ export function Pricing() {
             <Button
               className="mt-6 w-full rounded-full"
               variant={p.popular ? "default" : "outline"}
+              asChild
             >
-              Start free trial
+              <Link to="/signup" search={{ plan: p.planId as "starter" | "pro" }}>
+                Start free trial
+              </Link>
             </Button>
             <ul className="mt-6 space-y-2.5">
               {p.features.map((f) => (
