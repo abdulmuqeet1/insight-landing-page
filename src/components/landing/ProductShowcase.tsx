@@ -118,6 +118,7 @@ export function ProductShowcase() {
                   transition={{ duration: 0.35 }}
                   className="w-full"
                   loading="lazy"
+                  decoding="async"
                 />
               </AnimatePresence>
             </div>
