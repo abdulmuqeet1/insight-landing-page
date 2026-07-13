@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import dashboard from "@/assets/autobooks-dashboard.png";
+import dashboard from "@/assets/autobooks-dashboard.png?format=webp";
 
 export function Hero() {
   return (
@@ -74,7 +74,11 @@ export function Hero() {
             src={dashboard}
             alt="AutoBooks accounting dashboard showing revenue, outstanding invoices, expenses and recent invoices"
             className="w-full"
+            width={1902}
+            height={991}
             loading="eager"
+            fetchPriority="high"
+            decoding="async"
           />
         </div>
         {/* fade bottom into next section */}

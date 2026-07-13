@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { WarpShader } from "@/components/ui/warp-shader";
 import { cn } from "@/lib/utils";
-import dashboard from "@/assets/autobooks-dashboard.png";
+import dashboard from "@/assets/autobooks-dashboard.png?format=webp";
 
 const tabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -118,6 +118,7 @@ export function ProductShowcase() {
                   transition={{ duration: 0.35 }}
                   className="w-full"
                   loading="lazy"
+                  decoding="async"
                 />
               </AnimatePresence>
             </div>

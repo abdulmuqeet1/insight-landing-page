@@ -117,25 +117,62 @@ export function WarpShader({
         canvas.width = w;
         canvas.height = h;
         gl.viewport(0, 0, w, h);
+        gl.uniform2f(uRes, w, h);
       }
-      gl.uniform2f(uRes, w, h);
     };
+    resize();
+
+    // Only read layout / resize the drawing buffer when the element actually
+    // changes size — never inside the per-frame render loop (avoids thrash).
+    const ro = new ResizeObserver(() => resize());
+    ro.observe(canvas);
 
     let raf = 0;
+    let running = false;
     const start = performance.now();
     const render = () => {
-      resize();
       gl.uniform1f(uTime, (performance.now() - start) / 1000);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       raf = requestAnimationFrame(render);
     };
-    render();
+    const play = () => {
+      if (running) return;
+      running = true;
+      raf = requestAnimationFrame(render);
+    };
+    const pause = () => {
+      running = false;
+      cancelAnimationFrame(raf);
+    };
+
+    // Pause GPU work when the canvas is scrolled off-screen or the tab is hidden.
+    let onScreen = true;
+    const sync = () => {
+      if (onScreen && !document.hidden) play();
+      else pause();
+    };
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        onScreen = entry.isIntersecting;
+        sync();
+      },
+      { rootMargin: "200px" },
+    );
+    io.observe(canvas);
+    document.addEventListener("visibilitychange", sync);
+    sync();
 
     return () => {
-      cancelAnimationFrame(raf);
+      pause();
+      ro.disconnect();
+      io.disconnect();
+      document.removeEventListener("visibilitychange", sync);
       gl.deleteProgram(program);
     };
-  }, [colors]);
+    // colors is a fixed-length tuple; depend on its values so a new array
+    // literal with identical colors does not rebuild the WebGL context.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [colors[0], colors[1], colors[2]]);
 
   return (
     <canvas

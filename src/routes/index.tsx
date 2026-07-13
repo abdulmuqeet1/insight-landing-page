@@ -15,6 +15,7 @@ import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ, faqs } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { SiteFooter } from "@/components/landing/SiteFooter";
+import dashboardWebp from "@/assets/autobooks-dashboard.png?format=webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,7 +35,12 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: "/" },
+      // Preload the hero screenshot (the LCP element) so it starts fetching
+      // before the component tree hydrates.
+      { rel: "preload", as: "image", href: dashboardWebp, fetchPriority: "high" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
