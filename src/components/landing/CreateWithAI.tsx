@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { Sparkles, ArrowUp, Plus } from "lucide-react";
-import invoiceImg from "@/assets/ai-cards/invoice.jpg";
-import expenseImg from "@/assets/ai-cards/expense.jpg";
-import revenueImg from "@/assets/ai-cards/revenue.jpg";
-import reminderImg from "@/assets/ai-cards/reminder.jpg";
-import overdueImg from "@/assets/ai-cards/overdue.jpg";
-import reportImg from "@/assets/ai-cards/report.jpg";
+import invoiceImg from "@/assets/ai-cards/invoice.jpg?format=webp";
+import expenseImg from "@/assets/ai-cards/expense.jpg?format=webp";
+import revenueImg from "@/assets/ai-cards/revenue.jpg?format=webp";
+import reminderImg from "@/assets/ai-cards/reminder.jpg?format=webp";
+import overdueImg from "@/assets/ai-cards/overdue.jpg?format=webp";
+import reportImg from "@/assets/ai-cards/report.jpg?format=webp";
 
 const items = [
   { img: invoiceImg, label: "Invoice", prompt: "Create an invoice for Acme Studios — 20 dev hours and 10 design hours." },
