@@ -94,11 +94,7 @@ export function WarpShader({
 
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 3, -1, -1, 3]),
-      gl.STATIC_DRAW,
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
     const loc = gl.getAttribLocation(program, "position");
     gl.enableVertexAttribArray(loc);
     gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
@@ -175,11 +171,7 @@ export function WarpShader({
   }, [colors[0], colors[1], colors[2]]);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={cn("h-full w-full block", className)}
-      aria-hidden="true"
-    />
+    <canvas ref={canvasRef} className={cn("h-full w-full block", className)} aria-hidden="true" />
   );
 }
 

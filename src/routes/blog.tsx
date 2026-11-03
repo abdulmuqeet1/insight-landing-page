@@ -56,8 +56,8 @@ function Blog() {
             The Wize Accounts blog
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-muted-foreground sm:text-lg">
-            Guides, product updates and finance tips for small teams. We're
-            working on our first articles — check back soon.
+            Guides, product updates and finance tips for small teams. We're working on our first
+            articles — check back soon.
           </p>
         </div>
 
@@ -68,8 +68,8 @@ function Blog() {
             </span>
             <h2 className="text-xl font-bold">No posts yet</h2>
             <p className="max-w-sm text-sm text-muted-foreground">
-              Our team is writing the first stories on invoicing, expenses,
-              reporting and running finances for modern small teams. Stay tuned.
+              Our team is writing the first stories on invoicing, expenses, reporting and running
+              finances for modern small teams. Stay tuned.
             </p>
           </div>
         </div>

@@ -7,10 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
-    meta: [
-      { title: "Dashboard · Wize Accounts" },
-      { name: "robots", content: "noindex" },
-    ],
+    meta: [{ title: "Dashboard · Wize Accounts" }, { name: "robots", content: "noindex" }],
   }),
   component: Dashboard,
 });
@@ -60,9 +57,7 @@ function Dashboard() {
 
       <main className="mx-auto max-w-4xl px-6 py-12 sm:px-10">
         <p className="text-sm text-muted-foreground">Welcome back</p>
-        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight">
-          Hi {name} 👋
-        </h1>
+        <h1 className="mt-1 font-display text-3xl font-extrabold tracking-tight">Hi {name} 👋</h1>
         <p className="mt-2 max-w-lg text-muted-foreground">
           Your Wize Accounts workspace is ready. This is where your dashboard, invoices and reports
           will live.

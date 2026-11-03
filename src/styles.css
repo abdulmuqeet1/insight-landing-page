@@ -121,7 +121,10 @@
     );
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -137,21 +140,37 @@
 
 /* Concave fillets that blend a raised pill (notch) into a flat panel edge */
 @utility notch-fillet-l {
-  -webkit-mask: radial-gradient(circle at top left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  -webkit-mask: radial-gradient(
+    circle at top left,
+    transparent 0 var(--r, 22px),
+    #000 var(--r, 22px)
+  );
   mask: radial-gradient(circle at top left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
 }
 @utility notch-fillet-r {
-  -webkit-mask: radial-gradient(circle at top right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  -webkit-mask: radial-gradient(
+    circle at top right,
+    transparent 0 var(--r, 22px),
+    #000 var(--r, 22px)
+  );
   mask: radial-gradient(circle at top right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
 }
 
 /* Concave fillets for a notch that dips DOWN from a flat top edge */
 @utility notch-fillet-bl {
-  -webkit-mask: radial-gradient(circle at bottom left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  -webkit-mask: radial-gradient(
+    circle at bottom left,
+    transparent 0 var(--r, 22px),
+    #000 var(--r, 22px)
+  );
   mask: radial-gradient(circle at bottom left, transparent 0 var(--r, 22px), #000 var(--r, 22px));
 }
 @utility notch-fillet-br {
-  -webkit-mask: radial-gradient(circle at bottom right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
+  -webkit-mask: radial-gradient(
+    circle at bottom right,
+    transparent 0 var(--r, 22px),
+    #000 var(--r, 22px)
+  );
   mask: radial-gradient(circle at bottom right, transparent 0 var(--r, 22px), #000 var(--r, 22px));
 }
 
@@ -160,35 +179,53 @@
   background-color: color-mix(in oklab, var(--card) 58%, transparent);
   border-radius: 1.5rem;
   box-shadow: 0 18px 50px -28px color-mix(in oklab, var(--shell) 55%, transparent);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.35s ease, background-color 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
 }
 @utility soul-card-dark {
   background-color: color-mix(in oklab, #ffffff 8%, transparent);
   border-radius: 1.5rem;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.35s ease, background-color 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
 }
 
 /* horizontal marquee for the AI showcase cards */
 @keyframes card-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Moving gradient stroke for the giant footer wordmark */
 @keyframes wordmark-pan {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
 }
 
 @keyframes orbit-spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 @keyframes orbit-spin-rev {
-  to { transform: rotate(-360deg); }
+  to {
+    transform: rotate(-360deg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
+  html {
+    scroll-behavior: auto;
+  }
 }

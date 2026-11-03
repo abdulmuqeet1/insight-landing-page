@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const loginWithGoogle = async (accessToken: string) => {
     setLoading(true);
     try {
-      const response = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+      const response = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
         headers: { Authorization: `Bearer ${accessToken}` },
       });
       if (!response.ok) {
@@ -50,13 +50,16 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
       // Upsert into Supabase `users` table
       const { data, error } = await supabase
-        .from('users')
-        .upsert({
-          email: email,
-          name: name,
-          avatar_url: picture,
-          google_id: sub
-        }, { onConflict: 'email' })
+        .from("users")
+        .upsert(
+          {
+            email: email,
+            name: name,
+            avatar_url: picture,
+            google_id: sub,
+          },
+          { onConflict: "email" },
+        )
         .select()
         .single();
 

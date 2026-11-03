@@ -1,21 +1,24 @@
 import { motion } from "motion/react";
-import { FilePlus2, ArrowDownUp, ClipboardCheck } from "lucide-react";
+import { FilePlus2, Landmark, LineChart } from "lucide-react";
 
 const steps = [
   {
     icon: FilePlus2,
-    title: "Create and send documents",
-    body: "Create invoices, quotations, sales orders, purchase orders, and bills with your company branding.",
+    number: "01",
+    title: "Create, Quote & Bill in Seconds",
+    body: "Generate client estimates, sales orders, purchase orders, and invoices using custom-branded templates. Turn accepted quotes into live invoices with a single tap.",
   },
   {
-    icon: ArrowDownUp,
-    title: "Track money in and out",
-    body: "Record payments, expenses, bills, and customer activity so you always know what is paid, pending, or overdue.",
+    icon: Landmark,
+    number: "02",
+    title: "Automate Money In, Money Out & Bank Feeds",
+    body: "Connect your bank accounts via Plaid or import statements. Wize Accounts automatically reconciles payments, matches bills, and posts strictly balanced double-entry journals.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Stay ready for reports",
-    body: "Keep business records organized for financial summaries, tax review, exports, and accountant handoff.",
+    icon: LineChart,
+    number: "03",
+    title: "Instant Reports & Painless Accountant Handoff",
+    body: "Real-time P&L, balance sheets, and tax summaries stay up to date with every transaction. Invite your accountant with controlled role-based access or export with one click.",
   },
 ];
 
@@ -35,11 +38,9 @@ export function HowItWorks() {
   return (
     <section className="px-6 py-24">
       <div className="mx-auto max-w-6xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-          How it works
-        </p>
-        <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Everything connected in one accounting workspace
+        <p className="text-xs font-bold uppercase tracking-widest text-primary">HOW IT WORKS</p>
+        <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          From first quote to tax-ready year end in 3 steps
         </h2>
       </div>
 
@@ -66,9 +67,7 @@ export function HowItWorks() {
                 </div>
                 <div className="md:pl-8">
                   <h3 className="text-xl font-bold sm:text-2xl">{s.title}</h3>
-                  <p className="mt-2 max-w-2xl text-pretty text-muted-foreground">
-                    {s.body}
-                  </p>
+                  <p className="mt-2 max-w-2xl text-pretty text-muted-foreground">{s.body}</p>
                 </div>
               </motion.div>
             </div>

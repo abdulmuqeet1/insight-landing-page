@@ -5,6 +5,7 @@ import { Hero } from "@/components/landing/Hero";
 import { ProductShowcase } from "@/components/landing/ProductShowcase";
 import { HowItWorks } from "@/components/landing/HowItWorks";
 import { Features } from "@/components/landing/Features";
+import { CompetitiveEdge } from "@/components/landing/CompetitiveEdge";
 import { CreateWithAI } from "@/components/landing/CreateWithAI";
 import { AdminSavings } from "@/components/landing/AdminSavings";
 import { Modules } from "@/components/landing/Modules";
@@ -20,17 +21,20 @@ import dashboardWebp from "@/assets/wizeaccounts-dashboard.png?format=webp";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Wize Accounts — The business finance stack for modern small teams" },
+      { title: "Wize Accounts — The modern accounting workspace built for fast-moving businesses" },
       {
         name: "description",
         content:
-          "Create invoices, track expenses, manage customers and vendors, record payments, and understand your business from one clean accounting workspace.",
+          "Create branded invoices, track bills and expenses, sync bank transactions, manage inventory, and generate accountant-ready financial statements in seconds—powered by an autonomous AI bookkeeper.",
       },
-      { property: "og:title", content: "Wize Accounts — Accounting workspace for small teams" },
+      {
+        property: "og:title",
+        content: "Wize Accounts — The modern accounting workspace built for fast-moving businesses",
+      },
       {
         property: "og:description",
         content:
-          "Invoices, payments, expenses, customers, vendors, reports, and AI-assisted workflows in one connected accounting workspace.",
+          "Create branded invoices, track bills and expenses, sync bank transactions, manage inventory, and generate accountant-ready financial statements in seconds.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -51,12 +55,12 @@ export const Route = createFileRoute("/")({
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
           description:
-            "Wize Accounts is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
+            "The modern accounting workspace built for fast-moving businesses. Create branded invoices, track bills, sync bank transactions, and generate accountant-ready statements.",
           offers: {
             "@type": "Offer",
-            price: "0",
+            price: "15",
             priceCurrency: "USD",
-            description: "14-day free trial",
+            description: "14-day free trial on all plans",
           },
         }),
       },
@@ -86,6 +90,7 @@ function Index() {
       <ProductShowcase />
       <HowItWorks />
       <Features />
+      <CompetitiveEdge />
       <CreateWithAI />
       <AdminSavings />
       <Modules />

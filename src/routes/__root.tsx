@@ -100,8 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Wize Accounts — Accounting workspace for small teams" },
       {
         name: "twitter:description",
-        content:
-          "One connected accounting workspace for modern small teams.",
+        content: "One connected accounting workspace for modern small teams.",
       },
     ],
     links: [
@@ -123,8 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Organization",
           name: "Wize Accounts",
-          description:
-            "A clean accounting workspace for modern small teams.",
+          description: "A clean accounting workspace for modern small teams.",
           logo: "/favicon.ico",
         }),
       },
@@ -134,8 +132,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Wize Accounts",
-          description:
-            "A clean accounting workspace for modern small teams.",
+          description: "A clean accounting workspace for modern small teams.",
         }),
       },
     ],

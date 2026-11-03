@@ -74,9 +74,7 @@ function AuthPage() {
     setLoading(false);
     if (error) {
       toast.error(
-        error.message.includes("Invalid login")
-          ? "Incorrect email or password."
-          : error.message,
+        error.message.includes("Invalid login") ? "Incorrect email or password." : error.message,
       );
       return;
     }
@@ -99,7 +97,7 @@ function AuthPage() {
     },
     onError: () => {
       toast.error("Google login was canceled or failed.");
-    }
+    },
   });
 
   return (

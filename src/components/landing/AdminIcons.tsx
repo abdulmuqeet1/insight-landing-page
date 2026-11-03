@@ -15,13 +15,26 @@ export function ReceiptIcon() {
           stroke="currentColor"
           strokeWidth="2.5"
           strokeLinejoin="round"
-          fill="currentColor" fillOpacity={0.06}
+          fill="currentColor"
+          fillOpacity={0.06}
         />
-        <path d="M26 22h12M26 29h12M26 36h7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+        <path
+          d="M26 22h12M26 29h12M26 36h7"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
       </g>
       {/* magnifier sweeping in */}
       <g className="opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 [transform:translate(6px,6px)] group-hover:[transform:translate(0,0)]">
-        <circle cx="42" cy="42" r="8" stroke="currentColor" strokeWidth="2.5" fill="var(--background)" />
+        <circle
+          cx="42"
+          cy="42"
+          r="8"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          fill="var(--background)"
+        />
         <path d="m49 49 5 5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
       </g>
     </svg>
@@ -35,9 +48,15 @@ export function SparkleIcon() {
         d="M18 40h28a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H18a3 3 0 0 1-3-3v-6a3 3 0 0 1 3-3Z"
         stroke="currentColor"
         strokeWidth="2.5"
-        fill="currentColor" fillOpacity={0.06}
+        fill="currentColor"
+        fillOpacity={0.06}
       />
-      <path d="M22 40v-6M32 40v-6M42 40v-6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <path
+        d="M22 40v-6M32 40v-6M42 40v-6"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       {/* twinkles that pop on hover */}
       <g className="origin-center transition-all duration-500 group-hover:scale-110">
         <path
@@ -58,12 +77,33 @@ export function SparkleIcon() {
 export function InvoiceIcon() {
   return (
     <svg viewBox="0 0 64 64" fill="none" className={base} aria-hidden>
-      <rect x="16" y="12" width="32" height="40" rx="3" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity={0.06} />
-      <path d="M23 22h18M23 30h18M23 38h10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      <rect
+        x="16"
+        y="12"
+        width="32"
+        height="40"
+        rx="3"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        fill="currentColor"
+        fillOpacity={0.06}
+      />
+      <path
+        d="M23 22h18M23 30h18M23 38h10"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
       {/* check badge stamps in */}
       <g className="origin-center scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-100 group-hover:opacity-100">
         <circle cx="44" cy="44" r="9" fill="currentColor" />
-        <path d="m40 44 3 3 5-6" stroke="var(--background)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="m40 44 3 3 5-6"
+          stroke="var(--background)"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </g>
     </svg>
   );

@@ -46,13 +46,12 @@ export const Route = createFileRoute("/signup")({
 
 const STEPS = ["Plan", "Your details", "Verify email", "Payment"] as const;
 
-const accountSchema = z
-  .object({
-    fullName: z.string().trim().min(2, "Enter your full name").max(80),
-    company: z.string().trim().min(1, "Enter your company name").max(100),
-    email: z.string().trim().email("Enter a valid email address").max(255),
-    password: z.string().min(8, "Password must be at least 8 characters").max(72),
-  });
+const accountSchema = z.object({
+  fullName: z.string().trim().min(2, "Enter your full name").max(80),
+  company: z.string().trim().min(1, "Enter your company name").max(100),
+  email: z.string().trim().email("Enter a valid email address").max(255),
+  password: z.string().min(8, "Password must be at least 8 characters").max(72),
+});
 
 function SignupPage() {
   const navigate = useNavigate();
@@ -116,7 +115,7 @@ function SignupPage() {
     },
     onError: () => {
       toast.error("Google sign up was canceled or failed.");
-    }
+    },
   });
 
   async function handleAccountSubmit(e: React.FormEvent) {
@@ -185,8 +184,7 @@ function SignupPage() {
           <span className="text-base font-bold tracking-tight">Wize Accounts</span>
         </Link>
         <Link to="/auth" className="text-sm text-muted-foreground hover:text-foreground">
-          Already have an account?{" "}
-          <span className="font-semibold text-primary">Log in</span>
+          Already have an account? <span className="font-semibold text-primary">Log in</span>
         </Link>
       </header>
 
@@ -194,13 +192,7 @@ function SignupPage() {
         <Stepper current={step} />
 
         <div className="mt-10">
-          {step === 0 && (
-            <StepPlan
-              plan={plan}
-              setPlan={setPlan}
-              onNext={() => setStep(1)}
-            />
-          )}
+          {step === 0 && <StepPlan plan={plan} setPlan={setPlan} onNext={() => setStep(1)} />}
 
           {step === 1 && (
             <div>
@@ -254,9 +246,7 @@ function SignupPage() {
                       placeholder="Rivera Studio"
                       autoComplete="organization"
                     />
-                    {errors.company && (
-                      <p className="text-xs text-destructive">{errors.company}</p>
-                    )}
+                    {errors.company && <p className="text-xs text-destructive">{errors.company}</p>}
                   </div>
                 </div>
 
@@ -293,9 +283,7 @@ function SignupPage() {
                       {showPw ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
                   </div>
-                  {errors.password && (
-                    <p className="text-xs text-destructive">{errors.password}</p>
-                  )}
+                  {errors.password && <p className="text-xs text-destructive">{errors.password}</p>}
                 </div>
 
                 <div className="flex items-center gap-3 pt-2">
@@ -365,10 +353,7 @@ function Stepper({ current }: { current: number }) {
             </div>
             {i < STEPS.length - 1 && (
               <span
-                className={cn(
-                  "h-px flex-1 transition-colors",
-                  done ? "bg-primary" : "bg-border",
-                )}
+                className={cn("h-px flex-1 transition-colors", done ? "bg-primary" : "bg-border")}
               />
             )}
           </li>
@@ -426,7 +411,9 @@ function StepPlan({
                 <span
                   className={cn(
                     "grid h-5 w-5 place-items-center rounded-full border transition-colors",
-                    selected ? "border-primary bg-primary text-primary-foreground" : "border-border",
+                    selected
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-border",
                   )}
                 >
                   {selected && <Check className="h-3 w-3" />}
@@ -472,7 +459,9 @@ function StepVerify({
       <span className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-primary/10 text-primary">
         <MailCheck className="h-7 w-7" />
       </span>
-      <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight">Verify your email</h1>
+      <h1 className="mt-5 font-display text-2xl font-extrabold tracking-tight">
+        Verify your email
+      </h1>
       <p className="mx-auto mt-2 max-w-sm text-sm text-muted-foreground">
         We sent a confirmation link to{" "}
         <span className="font-semibold text-foreground">{email}</span>. Open it on this device to
@@ -541,9 +530,7 @@ function StepPayment({ plan, onDone }: { plan: PlanId; onDone: () => void }) {
 
       <div className="mt-6 flex items-center justify-between rounded-xl bg-muted/60 px-4 py-3 text-sm">
         <span className="font-medium">{selected.name} plan</span>
-        <span className="text-muted-foreground">
-          {selected.price}/month after trial
-        </span>
+        <span className="text-muted-foreground">{selected.price}/month after trial</span>
       </div>
 
       <form onSubmit={submit} className="mt-6 space-y-4" noValidate>

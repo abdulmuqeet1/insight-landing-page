@@ -69,10 +69,10 @@ export function Navbar() {
             to="/auth"
             className="rounded-full px-3 py-1.5 text-sm text-shell-foreground/80 transition-colors hover:text-shell-foreground"
           >
-            Login
+            Log In
           </Link>
-          <Button size="sm" className="rounded-full" asChild>
-            <Link to="/signup">Start free trial</Link>
+          <Button size="sm" className="rounded-full font-medium" asChild>
+            <Link to="/signup">Start Free Trial</Link>
           </Button>
         </div>
 
@@ -112,11 +112,11 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="block rounded-lg px-3 py-2 text-sm hover:bg-white/10"
           >
-            Login
+            Log In
           </Link>
           <Button className="mt-2 w-full rounded-full" asChild>
             <Link to="/signup" onClick={() => setOpen(false)}>
-              Start free trial
+              Start Free Trial
             </Link>
           </Button>
         </div>

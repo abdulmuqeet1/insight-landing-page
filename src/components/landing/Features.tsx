@@ -15,58 +15,112 @@ import {
 const features = [
   {
     icon: FileText,
-    title: "Invoicing",
-    body: "Create professional invoices, send them to customers, and track their status from draft to paid.",
-    bullets: ["Invoice status tracking", "Branded PDF templates", "Customer history", "Payment records", "Printable documents"],
+    title: "Invoicing & Accounts Receivable",
+    subtitle: "Create polished, professional invoices that get paid on time.",
+    bullets: [
+      "Automated payment status tracking (Draft, Sent, Partial, Paid, Overdue)",
+      "Multi-currency invoicing with live exchange rates",
+      "One-click credit notes and refund allocations",
+      "Automatic balance-due and customer ledger updates",
+      "Print-ready and shareable PDF exports",
+    ],
   },
   {
     icon: ClipboardList,
     title: "Quotations & Sales Orders",
-    body: "Prepare quotes and sales orders before work begins, then turn business activity into clean records.",
-    bullets: ["Quotation management", "Sales order tracking", "Customer-linked documents", "PDF previews", "Reusable layouts"],
+    subtitle: "Win clients and manage commitments before invoicing begins.",
+    bullets: [
+      "Send branded estimates with custom terms and validity dates",
+      "1-click conversion: Quote → Sales Order → Final Invoice",
+      "Fulfillment tracking and partial order deliveries",
+      "Customer-linked order history and audit trails",
+      "Live margin preview before sending",
+    ],
   },
   {
     icon: Receipt,
-    title: "Expenses & Bills",
-    body: "Track business costs, vendor bills, receipts, and purchases in one organized place.",
-    bullets: ["Expense categories", "Vendor records", "Bill tracking", "Purchase orders", "Cost summaries"],
+    title: "Expenses & Vendor Bills (AP)",
+    subtitle: "Take control of company spending and vendor payables.",
+    bullets: [
+      "Log vendor bills and match against Purchase Orders",
+      "Receipt image capture with automatic category tagging",
+      "Due-date tracking to avoid late payment penalties",
+      "Split expenses across business classes and locations",
+      "Debit notes and vendor credit management",
+    ],
   },
   {
     icon: CreditCard,
-    title: "Payments",
-    body: "Record payments received and keep customer balances easier to follow.",
-    bullets: ["Payment references", "Invoice payment status", "Customer payment history", "Paid and pending views", "Cash flow visibility"],
+    title: "Payments & Cash Application",
+    subtitle: "Settle transactions with real-time subledger synchronization.",
+    bullets: [
+      "Record customer payments and auto-allocate across open invoices",
+      "Support for Bank Transfers, Stripe, Credit Cards, Checks, and Cash",
+      "Automatic journal entry posting (Dr Bank / Cr Accounts Receivable)",
+      "Real-time cash position and uncleared transaction view",
+      "Overpayment handling and customer credit tracking",
+    ],
   },
   {
     icon: Users,
-    title: "Customers & Vendors",
-    body: "Keep the people and companies you work with connected to invoices, bills, payments, and documents.",
-    bullets: ["Customer profiles", "Vendor profiles", "Invoice history", "Bill history", "Contact details"],
+    title: "Customer & Vendor Hub",
+    subtitle: "Clean relationship tracking connected to every dollar.",
+    bullets: [
+      "Complete customer & supplier balance forward statements",
+      "Configurable credit limits and custom payment terms",
+      "Dedicated contact cards with tax IDs and billing addresses",
+      "Open item vs. historical transaction breakdown",
+      "Instant statements for customer collections",
+    ],
   },
   {
     icon: BarChart3,
-    title: "Reports",
-    body: "See the numbers that matter without digging through spreadsheets.",
-    bullets: ["Revenue overview", "Expense breakdown", "Outstanding invoices", "Recent payments", "Business summaries"],
+    title: "Real-Time Financial Reports",
+    subtitle: "Executive financial visibility without waiting for month-end.",
+    bullets: [
+      "Instant Profit & Loss (P&L), Balance Sheet, and Trial Balance",
+      "Accounts Receivable (AR) and Accounts Payable (AP) Aging reports",
+      "Cash Flow statement (Operating, Investing, Financing activities)",
+      "Comparative period-over-period financial analysis",
+      "Export clean datasets directly to Excel, CSV, or PDF",
+    ],
   },
   {
     icon: FileSignature,
-    title: "PDF Templates",
-    body: "Create polished invoices, quotations, and printable business documents with your own branding.",
-    bullets: ["Company logo", "Custom layout", "Line items", "Totals and tax", "Print and export ready"],
+    title: "Visual PDF Template Designer",
+    subtitle: "Stand out with invoices and documents designed to reflect your brand.",
+    bullets: [
+      "Custom company logo upload, size, and position tuning",
+      "Custom brand palette, accent colors, and typography",
+      "Dynamic line-item tables with tax, discount, and SKU toggles",
+      "Customizable footer notes, bank transfer details, and terms",
+      "Reusable templates across Invoices, Quotes, and POs",
+    ],
   },
   {
     icon: Sparkles,
-    title: "AI Assistant",
-    body: "Use AI to speed up repetitive finance work while staying in control.",
-    bullets: ["Draft invoices", "Summarize uploaded files", "Help organize records", "Answer business questions", "Review before saving"],
+    title: "Autonomous AI Assistant",
+    subtitle: "Natural language bookkeeping that acts as your on-demand finance analyst.",
+    bullets: [
+      "Draft customer invoices and vendor bills from quick chat prompts",
+      "Upload receipts or statement PDFs for instant OCR extraction",
+      "Run anomaly scans for duplicate charges and overdue invoices",
+      'Ask complex business questions ("What was our net margin last month?")',
+      "Every AI action requires human review before posting to the ledger",
+    ],
     ai: true,
   },
   {
     icon: DatabaseZap,
-    title: "Data Migration",
-    body: "Move business data into Wize Accounts without starting from scratch.",
-    bullets: ["Import business records", "Export data", "Migration workflow", "Review before commit", "Accountant-friendly handoff"],
+    title: "Frictionless Data Migration",
+    subtitle: "Bring your historical books over without starting from scratch.",
+    bullets: [
+      "Dedicated migration pipelines for QuickBooks, Xero, Excel, and CSV",
+      "Staged validation preview: catch errors before importing",
+      "Clean cutover date balancing with opening balance journals",
+      "Batch rollback support if you need to make changes",
+      "Pre-built field mapping for Chart of Accounts and Contacts",
+    ],
   },
 ];
 
@@ -74,14 +128,15 @@ export function Features() {
   return (
     <section id="features" className="px-6 py-24">
       <div className="mx-auto max-w-5xl text-center">
-        <p className="text-sm font-semibold uppercase tracking-wider text-primary">
-          Features
+        <p className="text-xs font-bold uppercase tracking-widest text-primary">
+          POWERFUL CAPABILITIES
         </p>
-        <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          Everything you need to manage business finances
+        <h2 className="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl">
+          Engineered for simplicity. Built on serious accounting math.
         </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          A connected workspace for daily accounting workflows.
+        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-sm sm:text-base">
+          Everything small teams, agencies, and growing companies need to stay profitable,
+          organized, and compliant.
         </p>
       </div>
 
@@ -95,29 +150,32 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
-              className="group soul-card p-6 hover:-translate-y-1 hover:shadow-[0_28px_60px_-30px_color-mix(in_oklab,var(--shell)_60%,transparent)]"
+              className="group soul-card flex flex-col p-6 hover:-translate-y-1 hover:shadow-[0_28px_60px_-30px_color-mix(in_oklab,var(--shell)_60%,transparent)]"
             >
-              <span
-                className={`grid h-11 w-11 place-items-center rounded-xl ${
-                  f.ai ? "bg-ai/10 text-ai" : "bg-primary/10 text-primary"
-                }`}
-              >
-                <Icon className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 flex items-center gap-2 text-lg font-bold">
-                {f.title}
+              <div className="flex items-center justify-between">
+                <span
+                  className={`grid h-11 w-11 place-items-center rounded-xl ${
+                    f.ai ? "bg-ai/10 text-ai" : "bg-primary/10 text-primary"
+                  }`}
+                >
+                  <Icon className="h-5 w-5" />
+                </span>
                 {f.ai && (
-                  <span className="rounded-full bg-ai/10 px-2 py-0.5 text-[10px] font-semibold uppercase text-ai">
+                  <span className="rounded-full bg-ai/10 px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider text-ai ring-1 ring-ai/20">
                     Beta
                   </span>
                 )}
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">{f.body}</p>
-              <ul className="mt-4 space-y-1.5">
+              </div>
+              <h3 className="mt-4 text-lg font-bold tracking-tight text-foreground">{f.title}</h3>
+              <p className="mt-1 text-xs font-medium text-muted-foreground">{f.subtitle}</p>
+              <ul className="mt-4 space-y-2 border-t border-border/40 pt-4 flex-1">
                 {f.bullets.map((b) => (
-                  <li key={b} className="flex items-center gap-2 text-sm text-foreground/80">
-                    <Check className="h-3.5 w-3.5 shrink-0 text-primary" />
-                    {b}
+                  <li
+                    key={b}
+                    className="flex items-start gap-2 text-xs leading-relaxed text-foreground/85"
+                  >
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                    <span>{b}</span>
                   </li>
                 ))}
               </ul>

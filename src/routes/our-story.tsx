@@ -93,9 +93,8 @@ function OurStory() {
             Why we started Wize Accounts
           </motion.h1>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-muted-foreground sm:text-lg">
-            Small teams deserve finance software that works quietly in the
-            background — keeping everything connected so you can focus on the
-            business, not the admin.
+            Small teams deserve finance software that works quietly in the background — keeping
+            everything connected so you can focus on the business, not the admin.
           </p>
         </div>
       </section>
