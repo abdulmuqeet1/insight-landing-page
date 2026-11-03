@@ -63,7 +63,7 @@ export function Hero() {
       </div>
 
       {/* product screenshot emerging in the middle of the hero */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.96 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.9, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
@@ -81,9 +81,8 @@ export function Hero() {
             decoding="async"
           />
         </div>
-        {/* fade bottom into next section */}
         <div className="pointer-events-none absolute inset-x-0 -bottom-1 h-40 bg-gradient-to-b from-transparent to-background" />
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }

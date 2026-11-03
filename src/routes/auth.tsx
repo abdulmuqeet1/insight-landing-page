@@ -4,11 +4,12 @@ import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { z } from "zod";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import { AuthLayout, GoogleIcon } from "@/components/auth/AuthLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useAuth } from "@/context/AuthContext";
 
 const searchSchema = z.object({
   redirect: z.string().optional(),
@@ -46,14 +47,14 @@ function AuthPage() {
   const [googleLoading, setGoogleLoading] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
+  const { loginWithGoogle, user } = useAuth();
+
   const dest = safeRedirect(redirect);
 
   // Already signed in → go to destination
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: dest });
-    });
-  }, [dest, navigate]);
+    if (user) navigate({ to: dest });
+  }, [user, dest, navigate]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -83,19 +84,23 @@ function AuthPage() {
     navigate({ to: dest });
   }
 
-  async function handleGoogle() {
-    setGoogleLoading(true);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) {
-      setGoogleLoading(false);
-      toast.error("Could not sign in with Google. Please try again.");
-      return;
+  const handleGoogle = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setGoogleLoading(true);
+      try {
+        await loginWithGoogle(tokenResponse.access_token);
+        toast.success("Welcome back!");
+        navigate({ to: dest });
+      } catch (error) {
+        toast.error("Could not sign in with Google. Please try again.");
+      } finally {
+        setGoogleLoading(false);
+      }
+    },
+    onError: () => {
+      toast.error("Google login was canceled or failed.");
     }
-    if (result.redirected) return;
-    navigate({ to: dest });
-  }
+  });
 
   return (
     <AuthLayout title="Welcome back" subtitle="Log in to your AutoBooks workspace.">
@@ -103,7 +108,7 @@ function AuthPage() {
         type="button"
         variant="outline"
         className="w-full gap-2"
-        onClick={handleGoogle}
+        onClick={() => handleGoogle()}
         disabled={googleLoading}
       >
         {googleLoading ? (

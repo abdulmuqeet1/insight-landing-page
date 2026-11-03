@@ -124,11 +124,10 @@ export function CreateWithAI() {
                     return (
                       <div
                         key={i}
-                        className={`relative h-56 w-44 shrink-0 overflow-hidden rounded-2xl ring-1 transition-all duration-500 ${
-                          isActive
+                        className={`relative h-56 w-44 shrink-0 overflow-hidden rounded-2xl ring-1 transition-all duration-500 ${isActive
                             ? "scale-105 ring-white/70 shadow-2xl"
                             : "scale-95 opacity-70 ring-white/10"
-                        }`}
+                          }`}
                       >
                         <img
                           src={it.img}

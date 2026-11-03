@@ -15,13 +15,14 @@ import {
 import { z } from "zod";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
 import { GoogleIcon } from "@/components/auth/AuthLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
 import { plans, getPlan, type PlanId } from "@/lib/plans";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useAuth } from "@/context/AuthContext";
 
 const searchSchema = z.object({
   plan: z.enum(["starter", "pro"]).optional(),
@@ -69,8 +70,20 @@ function SignupPage() {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  // Detect confirmed session (email link) and resume at the payment step.
+  const { loginWithGoogle, user } = useAuth();
+
+  // Detect confirmed session
   useEffect(() => {
+    if (user) {
+      // If user is set via Google Auth
+      if (search.verified) {
+        setStep(3);
+      } else {
+        navigate({ to: "/dashboard" });
+      }
+      return;
+    }
+
     const resume = (session: import("@supabase/supabase-js").Session | null) => {
       if (!session) return;
       if (search.verified) {
@@ -86,21 +99,25 @@ function SignupPage() {
     const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => resume(session));
     return () => sub.subscription.unsubscribe();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
-  async function handleGoogle() {
-    setGoogleLoading(true);
-    const result = await lovable.auth.signInWithOAuth("google", {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) {
-      setGoogleLoading(false);
-      toast.error("Could not sign up with Google. Please try again.");
-      return;
+  const handleGoogle = useGoogleLogin({
+    onSuccess: async (tokenResponse) => {
+      setGoogleLoading(true);
+      try {
+        await loginWithGoogle(tokenResponse.access_token);
+        toast.success("Account created successfully!");
+        navigate({ to: "/dashboard" });
+      } catch (error) {
+        toast.error("Could not sign up with Google. Please try again.");
+      } finally {
+        setGoogleLoading(false);
+      }
+    },
+    onError: () => {
+      toast.error("Google sign up was canceled or failed.");
     }
-    if (result.redirected) return;
-    navigate({ to: "/dashboard" });
-  }
+  });
 
   async function handleAccountSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -196,7 +213,7 @@ function SignupPage() {
                 type="button"
                 variant="outline"
                 className="mt-6 w-full gap-2"
-                onClick={handleGoogle}
+                onClick={() => handleGoogle()}
                 disabled={googleLoading}
               >
                 {googleLoading ? (
