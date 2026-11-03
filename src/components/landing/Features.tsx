@@ -65,7 +65,7 @@ const features = [
   {
     icon: DatabaseZap,
     title: "Data Migration",
-    body: "Move business data into AutoBooks without starting from scratch.",
+    body: "Move business data into Wize Accounts without starting from scratch.",
     bullets: ["Import business records", "Export data", "Migration workflow", "Review before commit", "Accountant-friendly handoff"],
   },
 ];

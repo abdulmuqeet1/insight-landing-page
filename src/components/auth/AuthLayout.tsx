@@ -32,7 +32,7 @@ export function AuthLayout({
           <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
             <BookOpen className="h-5 w-5" />
           </span>
-          <span className="text-lg font-bold tracking-tight">AutoBooks</span>
+          <span className="text-lg font-bold tracking-tight">Wize Accounts</span>
         </Link>
 
         <div className="relative max-w-md">
@@ -52,7 +52,7 @@ export function AuthLayout({
         </div>
 
         <p className="relative text-xs text-shell-muted">
-          &copy; {new Date().getFullYear()} AutoBooks. All rights reserved.
+          &copy; {new Date().getFullYear()} Wize Accounts. All rights reserved.
         </p>
       </aside>
 
@@ -62,12 +62,12 @@ export function AuthLayout({
           <Link
             to="/"
             className="mb-8 flex items-center gap-2 lg:hidden"
-            aria-label="AutoBooks home"
+            aria-label="Wize Accounts home"
           >
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
               <BookOpen className="h-4 w-4" />
             </span>
-            <span className="text-base font-bold tracking-tight">AutoBooks</span>
+            <span className="text-base font-bold tracking-tight">Wize Accounts</span>
           </Link>
           <h1 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">
             {title}

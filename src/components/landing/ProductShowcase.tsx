@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { WarpShader } from "@/components/ui/warp-shader";
 import { cn } from "@/lib/utils";
-import dashboard from "@/assets/autobooks-dashboard.png?format=webp";
+import dashboard from "@/assets/wizeaccounts-dashboard.png?format=webp";
 
 const tabs = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
@@ -111,7 +111,7 @@ export function ProductShowcase() {
                 <motion.img
                   key={active}
                   src={dashboard}
-                  alt={`AutoBooks ${active} view`}
+                  alt={`Wize Accounts ${active} view`}
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -12 }}

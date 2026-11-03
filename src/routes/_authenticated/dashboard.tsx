@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/_authenticated/dashboard")({
   head: () => ({
     meta: [
-      { title: "Dashboard · AutoBooks" },
+      { title: "Dashboard · Wize Accounts" },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -51,7 +51,7 @@ function Dashboard() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
             <BookOpen className="h-4 w-4" />
           </span>
-          <span className="text-base font-bold tracking-tight">AutoBooks</span>
+          <span className="text-base font-bold tracking-tight">Wize Accounts</span>
         </div>
         <Button variant="ghost" size="sm" className="gap-2" onClick={handleSignOut}>
           <LogOut className="h-4 w-4" /> Sign out
@@ -64,7 +64,7 @@ function Dashboard() {
           Hi {name} 👋
         </h1>
         <p className="mt-2 max-w-lg text-muted-foreground">
-          Your AutoBooks workspace is ready. This is where your dashboard, invoices and reports
+          Your Wize Accounts workspace is ready. This is where your dashboard, invoices and reports
           will live.
         </p>
 

@@ -33,10 +33,10 @@ export const Route = createFileRoute("/signup")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Create your account · AutoBooks" },
+      { title: "Create your account · Wize Accounts" },
       {
         name: "description",
-        content: "Start your 14-day AutoBooks free trial. Pick a plan and create your account.",
+        content: "Start your 14-day Wize Accounts free trial. Pick a plan and create your account.",
       },
       { name: "robots", content: "noindex" },
     ],
@@ -182,7 +182,7 @@ function SignupPage() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
             <BookOpen className="h-4 w-4" />
           </span>
-          <span className="text-base font-bold tracking-tight">AutoBooks</span>
+          <span className="text-base font-bold tracking-tight">Wize Accounts</span>
         </Link>
         <Link to="/auth" className="text-sm text-muted-foreground hover:text-foreground">
           Already have an account?{" "}
@@ -527,7 +527,7 @@ function StepPayment({ plan, onDone }: { plan: PlanId; onDone: () => void }) {
     setSubmitting(true);
     // UI only — no real charge. Simulate a brief processing moment.
     setTimeout(() => {
-      toast.success("You're all set! Welcome to AutoBooks.");
+      toast.success("You're all set! Welcome to Wize Accounts.");
       onDone();
     }, 700);
   }

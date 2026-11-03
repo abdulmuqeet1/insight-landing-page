@@ -22,7 +22,7 @@ export function AISection() {
             Ask questions. Draft faster. Stay in control.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Use AutoBooks AI to help draft invoices, summarize files, organize
+            Use Wize Accounts AI to help draft invoices, summarize files, organize
             business data, and answer questions from your current workspace. AI
             helps with the admin work, while you review before anything is saved.
           </p>

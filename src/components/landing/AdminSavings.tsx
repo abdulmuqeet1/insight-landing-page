@@ -21,7 +21,7 @@ export function AdminSavings() {
           Less admin. More control.
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Disconnected tools create small tasks that add up every week. AutoBooks
+          Disconnected tools create small tasks that add up every week. Wize Accounts
           brings the work into one place so your team spends less time chasing
           records and more time running the business.
         </p>

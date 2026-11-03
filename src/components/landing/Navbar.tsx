@@ -40,7 +40,7 @@ export function Navbar() {
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
             <BookOpen className="h-4 w-4" />
           </span>
-          <span className="text-sm font-bold tracking-tight">AutoBooks</span>
+          <span className="text-sm font-bold tracking-tight">Wize Accounts</span>
         </Link>
 
         <div className="hidden items-center gap-1 md:flex">

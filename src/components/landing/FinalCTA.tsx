@@ -22,7 +22,7 @@ export function FinalCTA() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-pretty text-white/85">
           Create invoices, track expenses, manage customers and vendors, organize
-          documents, and understand your numbers with AutoBooks.
+          documents, and understand your numbers with Wize Accounts.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button size="lg" className="group rounded-full px-6">

@@ -27,7 +27,7 @@ export function SiteFooter() {
               <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
                 <BookOpen className="h-4 w-4" />
               </span>
-              <span className="text-lg font-bold">AutoBooks</span>
+              <span className="text-lg font-bold">Wize Accounts</span>
             </div>
             <p className="mt-4 text-sm text-shell-foreground/70">
               Simple accounting workflows for growing businesses.
@@ -71,7 +71,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-xs text-shell-foreground/60 sm:flex-row">
-          <p>© {new Date().getFullYear()} AutoBooks. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Wize Accounts. All rights reserved.</p>
           <div className="flex gap-5">
             <a href="#" className="hover:text-white">Privacy</a>
             <a href="#" className="hover:text-white">Terms</a>

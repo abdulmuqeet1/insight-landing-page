@@ -81,23 +81,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AutoBooks — Accounting workspace for small teams" },
+      { title: "Wize Accounts — Accounting workspace for small teams" },
       {
         name: "description",
         content:
-          "AutoBooks is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
+          "Wize Accounts is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
       },
-      { name: "author", content: "AutoBooks" },
-      { property: "og:title", content: "AutoBooks — Accounting workspace for small teams" },
+      { name: "author", content: "Wize Accounts" },
+      { property: "og:title", content: "Wize Accounts — Accounting workspace for small teams" },
       {
         property: "og:description",
         content:
           "Invoices, payments, expenses, customers, vendors, reports and AI-assisted workflows in one connected accounting workspace.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "AutoBooks" },
+      { property: "og:site_name", content: "Wize Accounts" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:title", content: "AutoBooks — Accounting workspace for small teams" },
+      { name: "twitter:title", content: "Wize Accounts — Accounting workspace for small teams" },
       {
         name: "twitter:description",
         content:
@@ -122,7 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "AutoBooks",
+          name: "Wize Accounts",
           description:
             "A clean accounting workspace for modern small teams.",
           logo: "/favicon.ico",
@@ -133,7 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
-          name: "AutoBooks",
+          name: "Wize Accounts",
           description:
             "A clean accounting workspace for modern small teams.",
         }),

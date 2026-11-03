@@ -15,18 +15,18 @@ import { Testimonials } from "@/components/landing/Testimonials";
 import { FAQ, faqs } from "@/components/landing/FAQ";
 import { FinalCTA } from "@/components/landing/FinalCTA";
 import { SiteFooter } from "@/components/landing/SiteFooter";
-import dashboardWebp from "@/assets/autobooks-dashboard.png?format=webp";
+import dashboardWebp from "@/assets/wizeaccounts-dashboard.png?format=webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AutoBooks — The business finance stack for modern small teams" },
+      { title: "Wize Accounts — The business finance stack for modern small teams" },
       {
         name: "description",
         content:
           "Create invoices, track expenses, manage customers and vendors, record payments, and understand your business from one clean accounting workspace.",
       },
-      { property: "og:title", content: "AutoBooks — Accounting workspace for small teams" },
+      { property: "og:title", content: "Wize Accounts — Accounting workspace for small teams" },
       {
         property: "og:description",
         content:
@@ -47,11 +47,11 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
-          name: "AutoBooks",
+          name: "Wize Accounts",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
           description:
-            "AutoBooks is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
+            "Wize Accounts is a clean accounting workspace for small teams: invoices, expenses, payments, customers, vendors, reports and AI-assisted workflows.",
           offers: {
             "@type": "Offer",
             price: "0",

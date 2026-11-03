@@ -109,7 +109,7 @@ export function CreateWithAI() {
             <div className="relative flex flex-1 flex-col items-center justify-center gap-8 px-4">
               <div className="text-center">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white/90">
-                  <Sparkles className="h-3.5 w-3.5" /> AutoBooks AI
+                  <Sparkles className="h-3.5 w-3.5" /> Wize Accounts AI
                 </span>
                 <h3 className="mt-4 text-balance text-2xl font-extrabold tracking-tight text-white sm:text-4xl">
                   Create anything with one click

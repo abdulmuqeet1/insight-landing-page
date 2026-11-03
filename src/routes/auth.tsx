@@ -19,8 +19,8 @@ export const Route = createFileRoute("/auth")({
   validateSearch: searchSchema,
   head: () => ({
     meta: [
-      { title: "Log in · AutoBooks" },
-      { name: "description", content: "Log in to your AutoBooks accounting workspace." },
+      { title: "Log in · Wize Accounts" },
+      { name: "description", content: "Log in to your Wize Accounts accounting workspace." },
       { name: "robots", content: "noindex" },
     ],
   }),
@@ -103,7 +103,7 @@ function AuthPage() {
   });
 
   return (
-    <AuthLayout title="Welcome back" subtitle="Log in to your AutoBooks workspace.">
+    <AuthLayout title="Welcome back" subtitle="Log in to your Wize Accounts workspace.">
       <Button
         type="button"
         variant="outline"

@@ -9,17 +9,17 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/our-story")({
   head: () => ({
     meta: [
-      { title: "Our Story — AutoBooks" },
+      { title: "Our Story — Wize Accounts" },
       {
         name: "description",
         content:
-          "Why we built AutoBooks: a connected accounting workspace for small teams and founders who want to stay on top of their finances without drowning in admin.",
+          "Why we built Wize Accounts: a connected accounting workspace for small teams and founders who want to stay on top of their finances without drowning in admin.",
       },
-      { property: "og:title", content: "Our Story — AutoBooks" },
+      { property: "og:title", content: "Our Story — Wize Accounts" },
       {
         property: "og:description",
         content:
-          "Why we built AutoBooks: one connected workspace for invoices, expenses, payments and reports — so your business explains itself as it runs.",
+          "Why we built Wize Accounts: one connected workspace for invoices, expenses, payments and reports — so your business explains itself as it runs.",
       },
       { property: "og:type", content: "article" },
       { property: "og:url", content: "/our-story" },
@@ -31,13 +31,13 @@ export const Route = createFileRoute("/our-story")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          name: "Our Story — AutoBooks",
+          name: "Our Story — Wize Accounts",
           description:
-            "Why we built AutoBooks: a connected accounting workspace for small teams.",
+            "Why we built Wize Accounts: a connected accounting workspace for small teams.",
           url: "/our-story",
           publisher: {
             "@type": "Organization",
-            name: "AutoBooks",
+            name: "Wize Accounts",
           },
         }),
       },
@@ -59,14 +59,14 @@ const sections = [
     title: "The idea",
     body: [
       "We didn't want to build yet another finance tool. We wanted to build a workspace where everything stays connected without you having to hold it together.",
-      "AutoBooks keeps the moving parts of your business — invoices, payments, expenses, customers, vendors and documents — in one place, reflecting what's actually happening. Instead of forcing you to pull information out, it surfaces the right information at the right time: what's paid, what's pending, what's overdue and what needs your attention.",
+      "Wize Accounts keeps the moving parts of your business — invoices, payments, expenses, customers, vendors and documents — in one place, reflecting what's actually happening. Instead of forcing you to pull information out, it surfaces the right information at the right time: what's paid, what's pending, what's overdue and what needs your attention.",
       "It doesn't replace your accountant. It sits in between and keeps everything organized and export-ready, so conversations are easier and decisions are based on up-to-date numbers.",
     ],
   },
   {
     title: "What we're focused on",
     body: [
-      "AutoBooks is built for founders and small teams who run real businesses and want to stay on top of their finances without spending their days managing admin.",
+      "Wize Accounts is built for founders and small teams who run real businesses and want to stay on top of their finances without spending their days managing admin.",
       "We focus on reducing manual, repetitive work, keeping business data consistent and reliable, and making it easy to understand what's happening and why. Where AI helps, it drafts and speeds up the busywork — but you always stay in control and review before anything is saved.",
       "Our goal is simple: your business should stay organized and explain itself as it runs.",
     ],
@@ -90,7 +90,7 @@ function OurStory() {
             transition={{ duration: 0.6 }}
             className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl"
           >
-            Why we started AutoBooks
+            Why we started Wize Accounts
           </motion.h1>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-muted-foreground sm:text-lg">
             Small teams deserve finance software that works quietly in the
@@ -126,11 +126,11 @@ function OurStory() {
             <p className="text-lg font-semibold">
               Your business should stay organized and explain itself as it runs.
             </p>
-            <p className="mt-2 text-sm text-muted-foreground">— The AutoBooks team</p>
+            <p className="mt-2 text-sm text-muted-foreground">— The Wize Accounts team</p>
             <div className="mt-8">
               <Button size="lg" className="group rounded-full px-6" asChild>
                 <Link to="/">
-                  Explore AutoBooks
+                  Explore Wize Accounts
                   <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </Button>

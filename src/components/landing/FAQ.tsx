@@ -7,16 +7,16 @@ import {
 
 export const faqs = [
   {
-    q: "What is AutoBooks?",
-    a: "AutoBooks is a clean accounting workspace for small teams. Create invoices, track expenses, manage customers and vendors, record payments, organize documents, and understand your numbers — all in one connected place instead of scattered spreadsheets and tools.",
+    q: "What is Wize Accounts?",
+    a: "Wize Accounts is a clean accounting workspace for small teams. Create invoices, track expenses, manage customers and vendors, record payments, organize documents, and understand your numbers — all in one connected place instead of scattered spreadsheets and tools.",
   },
   {
     q: "Do I need accounting experience to use it?",
-    a: "No. AutoBooks is built for founders and small teams, not accountants. The workflows guide you through invoicing, expenses and reports with plain language, so you can stay on top of your finances without a bookkeeping background.",
+    a: "No. Wize Accounts is built for founders and small teams, not accountants. The workflows guide you through invoicing, expenses and reports with plain language, so you can stay on top of your finances without a bookkeeping background.",
   },
   {
-    q: "Does AutoBooks replace my accountant?",
-    a: "It doesn't replace them — it makes working with them easier. AutoBooks keeps your invoices, expenses and records organized and export-ready, so handoffs and conversations with your accountant are faster and based on up-to-date information.",
+    q: "Does Wize Accounts replace my accountant?",
+    a: "It doesn't replace them — it makes working with them easier. Wize Accounts keeps your invoices, expenses and records organized and export-ready, so handoffs and conversations with your accountant are faster and based on up-to-date information.",
   },
   {
     q: "How does the AI assistant work?",
@@ -28,7 +28,7 @@ export const faqs = [
   },
   {
     q: "Can I create professional, branded invoices?",
-    a: "Yes. AutoBooks includes branded PDF invoice templates so your documents look professional from day one. You can track what's paid, pending and overdue from a single dashboard.",
+    a: "Yes. Wize Accounts includes branded PDF invoice templates so your documents look professional from day one. You can track what's paid, pending and overdue from a single dashboard.",
   },
   {
     q: "Is there a free trial?",
@@ -36,7 +36,7 @@ export const faqs = [
   },
   {
     q: "Can I import my existing data?",
-    a: "Yes. You can bring in your existing customers, vendors and records so you don't have to start from scratch when moving to AutoBooks.",
+    a: "Yes. You can bring in your existing customers, vendors and records so you don't have to start from scratch when moving to Wize Accounts.",
   },
 ];
 
@@ -52,7 +52,7 @@ export function FAQ() {
             Frequently asked questions
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-pretty text-muted-foreground">
-            Everything you need to know about AutoBooks. Can't find an answer?
+            Everything you need to know about Wize Accounts. Can't find an answer?
             Reach out and our team will help.
           </p>
         </div>

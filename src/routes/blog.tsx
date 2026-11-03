@@ -7,17 +7,17 @@ import { SmoothScroll } from "@/components/SmoothScroll";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog — AutoBooks" },
+      { title: "Blog — Wize Accounts" },
       {
         name: "description",
         content:
-          "Guides, product updates and finance tips for small teams from the AutoBooks team. Fresh articles coming soon.",
+          "Guides, product updates and finance tips for small teams from the Wize Accounts team. Fresh articles coming soon.",
       },
-      { property: "og:title", content: "Blog — AutoBooks" },
+      { property: "og:title", content: "Blog — Wize Accounts" },
       {
         property: "og:description",
         content:
-          "Guides, product updates and finance tips for small teams from the AutoBooks team.",
+          "Guides, product updates and finance tips for small teams from the Wize Accounts team.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/blog" },
@@ -29,11 +29,11 @@ export const Route = createFileRoute("/blog")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "AutoBooks Blog",
+          name: "Wize Accounts Blog",
           description:
-            "Guides, product updates and finance tips for small teams from the AutoBooks team.",
+            "Guides, product updates and finance tips for small teams from the Wize Accounts team.",
           url: "/blog",
-          publisher: { "@type": "Organization", name: "AutoBooks" },
+          publisher: { "@type": "Organization", name: "Wize Accounts" },
         }),
       },
     ],
@@ -53,7 +53,7 @@ function Blog() {
             Blog
           </div>
           <h1 className="text-balance text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl">
-            The AutoBooks blog
+            The Wize Accounts blog
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-muted-foreground sm:text-lg">
             Guides, product updates and finance tips for small teams. We're

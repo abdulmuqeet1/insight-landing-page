@@ -32,7 +32,7 @@ export function ReportsSection() {
           See what is paid, pending, and costing you money
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Tap any report to bring it into focus. AutoBooks gives small teams a
+          Tap any report to bring it into focus. Wize Accounts gives small teams a
           clear view of revenue, expenses, customers, invoices, and payments.
         </p>
       </div>

@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
 
 const testimonials = [
-  { text: "Before AutoBooks, invoicing and expense tracking were spread across too many tools. Now we can see what is paid, pending, and overdue in one place.", name: "Operations Lead", role: "Studio of 8" },
+  { text: "Before Wize Accounts, invoicing and expense tracking were spread across too many tools. Now we can see what is paid, pending, and overdue in one place.", name: "Operations Lead", role: "Studio of 8" },
   { text: "Creating documents and tracking payments is much faster. The dashboard gives us the financial overview we used to build manually.", name: "Founder", role: "Agency" },
-  { text: "AutoBooks makes it easier to keep customer records, invoices, and reports organized without needing a complex accounting setup.", name: "Owner", role: "Retail business" },
+  { text: "Wize Accounts makes it easier to keep customer records, invoices, and reports organized without needing a complex accounting setup.", name: "Owner", role: "Retail business" },
   { text: "The AI assistant helps draft and organize work faster, but we still review everything before saving. That balance matters.", name: "Finance Manager", role: "Services firm" },
   { text: "We finally have one place for invoices, expenses and reports. Our monthly review takes a fraction of the time.", name: "Co-founder", role: "Consultancy" },
   { text: "Branded PDF templates made our invoices look professional from day one. Customers notice.", name: "Director", role: "Logistics" },
@@ -44,7 +44,7 @@ export function Testimonials() {
           Testimonials
         </div>
         <h2 className="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">
-          What teams say about AutoBooks
+          What teams say about Wize Accounts
         </h2>
       </div>
 

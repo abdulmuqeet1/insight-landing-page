@@ -1,12 +1,12 @@
 /**
- * Oversized decorative "AUTOBOOKS" wordmark: white fill with a moving
+ * Oversized decorative "WIZE ACCOUNTS" wordmark: white fill with a moving
  * gradient stroke (like the giant footer text on midday.ai).
  */
 export function FooterWordmark() {
   return (
     <div className="mt-12 w-full overflow-hidden" aria-hidden>
       <svg
-        viewBox="0 0 1000 150"
+        viewBox="0 0 1300 150"
         className="w-full select-none"
         preserveAspectRatio="xMidYMid meet"
       >
@@ -33,18 +33,18 @@ export function FooterWordmark() {
           </linearGradient>
         </defs>
         <text
-          x="500"
+          x="650"
           y="120"
           textAnchor="middle"
           fontFamily="var(--font-display)"
           fontWeight="800"
-          fontSize="150"
+          fontSize="135"
           letterSpacing="-4"
           fill="#ffffff"
           stroke="url(#wordmark-gradient)"
           strokeWidth="2.5"
         >
-          AUTOBOOKS
+          WIZE ACCOUNTS
         </text>
       </svg>
     </div>

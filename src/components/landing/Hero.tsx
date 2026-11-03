@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import dashboard from "@/assets/autobooks-dashboard.png?format=webp";
+import dashboard from "@/assets/wizeaccounts-dashboard.png?format=webp";
 
 export function Hero() {
   return (
@@ -72,7 +72,7 @@ export function Hero() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-shell/20 ring-1 ring-black/5">
           <img
             src={dashboard}
-            alt="AutoBooks accounting dashboard showing revenue, outstanding invoices, expenses and recent invoices"
+            alt="Wize Accounts accounting dashboard showing revenue, outstanding invoices, expenses and recent invoices"
             className="w-full"
             width={1902}
             height={991}
