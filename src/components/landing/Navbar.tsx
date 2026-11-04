@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BookOpen, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -36,10 +36,14 @@ export function Navbar() {
           scrolled && "backdrop-blur-md",
         )}
       >
-        <Link to="/" className="flex shrink-0 items-center gap-2 pl-2">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <BookOpen className="h-4 w-4" />
-          </span>
+        <Link to="/" className="flex shrink-0 items-center gap-1.5 pl-2">
+          <img
+            src="/logo.png"
+            alt="Wize Accounts Logo"
+            className="h-8 w-8 object-contain"
+            width={32}
+            height={32}
+          />
           <span className="text-sm font-bold tracking-tight">Wize Accounts</span>
         </Link>
 

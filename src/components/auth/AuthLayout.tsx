@@ -1,4 +1,4 @@
-import { BookOpen, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 
@@ -28,10 +28,14 @@ export function AuthLayout({
               "radial-gradient(60% 50% at 20% 10%, color-mix(in oklab, var(--shell-accent) 45%, transparent) 0%, transparent 60%), radial-gradient(50% 40% at 90% 90%, color-mix(in oklab, var(--accent) 35%, transparent) 0%, transparent 55%)",
           }}
         />
-        <Link to="/" className="relative flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <BookOpen className="h-5 w-5" />
-          </span>
+        <Link to="/" className="relative flex items-center gap-1.5">
+          <img
+            src="/logo.png"
+            alt="Wize Accounts Logo"
+            className="h-9 w-9 object-contain"
+            width={36}
+            height={36}
+          />
           <span className="text-lg font-bold tracking-tight">Wize Accounts</span>
         </Link>
 
@@ -61,12 +65,16 @@ export function AuthLayout({
         <div className="mx-auto w-full max-w-md">
           <Link
             to="/"
-            className="mb-8 flex items-center gap-2 lg:hidden"
+            className="mb-8 flex items-center gap-1.5 lg:hidden"
             aria-label="Wize Accounts home"
           >
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-              <BookOpen className="h-4 w-4" />
-            </span>
+            <img
+              src="/logo.png"
+              alt="Wize Accounts Logo"
+              className="h-8 w-8 object-contain"
+              width={32}
+              height={32}
+            />
             <span className="text-base font-bold tracking-tight">Wize Accounts</span>
           </Link>
           <h1 className="font-display text-2xl font-extrabold tracking-tight sm:text-3xl">

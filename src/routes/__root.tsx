@@ -96,14 +96,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Wize Accounts" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Wize Accounts — Accounting workspace for small teams" },
       {
         name: "twitter:description",
         content: "One connected accounting workspace for modern small teams.",
       },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "icon", type: "image/png", href: "/favicon-32x32.png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -123,7 +128,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Organization",
           name: "Wize Accounts",
           description: "A clean accounting workspace for modern small teams.",
-          logo: "/favicon.ico",
+          logo: "/logo.png",
         }),
       },
       {

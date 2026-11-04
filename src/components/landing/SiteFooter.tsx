@@ -1,4 +1,3 @@
-import { BookOpen } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { FooterWordmark } from "./FooterWordmark";
 
@@ -44,11 +43,15 @@ export function SiteFooter() {
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-shell px-8 py-14 text-shell-foreground">
         <div className="grid gap-12 md:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-                <BookOpen className="h-4 w-4" />
-              </span>
-              <span className="text-lg font-bold">Wize Accounts</span>
+            <div className="flex items-center gap-1.5">
+              <img
+                src="/logo.png"
+                alt="Wize Accounts Logo"
+                className="h-8 w-8 object-contain"
+                width={32}
+                height={32}
+              />
+              <span className="text-lg font-bold text-white">Wize Accounts</span>
             </div>
             <p className="mt-4 text-sm text-shell-foreground/80 leading-relaxed">
               The modern, intelligent accounting workspace built for ambitious businesses.

@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { BookOpen, LogOut, ArrowUpRight } from "lucide-react";
+import { LogOut, ArrowUpRight } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -44,10 +44,14 @@ function Dashboard() {
   return (
     <div className="min-h-screen bg-background">
       <header className="flex items-center justify-between border-b px-6 py-4 sm:px-10">
-        <div className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <BookOpen className="h-4 w-4" />
-          </span>
+        <div className="flex items-center gap-1.5">
+          <img
+            src="/logo.png"
+            alt="Wize Accounts Logo"
+            className="h-8 w-8 object-contain"
+            width={32}
+            height={32}
+          />
           <span className="text-base font-bold tracking-tight">Wize Accounts</span>
         </div>
         <Button variant="ghost" size="sm" className="gap-2" onClick={handleSignOut}>

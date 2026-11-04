@@ -38,6 +38,9 @@ export const Route = createFileRoute("/")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: "/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [
       { rel: "canonical", href: "/" },
@@ -54,6 +57,7 @@ export const Route = createFileRoute("/")({
           name: "Wize Accounts",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
+          image: "/logo.png",
           description:
             "The modern accounting workspace built for fast-moving businesses. Create branded invoices, track bills, sync bank transactions, and generate accountant-ready statements.",
           offers: {

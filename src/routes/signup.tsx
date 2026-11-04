@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  BookOpen,
   Check,
   CreditCard,
   Eye,
@@ -177,10 +176,14 @@ function SignupPage() {
   return (
     <div className="min-h-screen">
       <header className="flex items-center justify-between px-6 py-5 sm:px-10">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-primary-foreground">
-            <BookOpen className="h-4 w-4" />
-          </span>
+        <Link to="/" className="flex items-center gap-1.5">
+          <img
+            src="/logo.png"
+            alt="Wize Accounts Logo"
+            className="h-8 w-8 object-contain"
+            width={32}
+            height={32}
+          />
           <span className="text-base font-bold tracking-tight">Wize Accounts</span>
         </Link>
         <Link to="/auth" className="text-sm text-muted-foreground hover:text-foreground">
